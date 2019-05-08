@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
+
+<style>
+body {
+  background: rgb(204, 204, 204);
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: justify;
+}
+page {
+  background: white;
+  display: block;
+  margin: 1cm auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+page[size="A4"] {
+  width: 21cm;
+  min-height: 29.7cm;
+}
+page[size="A4"][layout="portrait"] {
+  width: 29.7cm;
+  height: 21cm;
+}
+@media print {
+  body,
+  page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+.header {
+  padding-top: 10px;
+  text-align: center;
+  border: 2px solid #ddd;
+}
+.margem {
+  padding-top: 2cm;
+  padding-right: 2cm;
+  padding-bottom: 2cm;
+  padding-left: 2cm;
+}
+h1 {
+	text-align: center;
+}
+.assinatura{
+	text-align: center;
+    padding-top: 1cm;
+}
+.editor{
+	page-break-inside: auto;
+    background: rgb(204, 204, 204);        
+}
+</style>
+</head>
+<body>
+<page size="A4">
+	<div class="margem">
+      <h1>Titulo do documento</h1>
+      <p>Texto do documento fixo e não alterável. Esse texto não pode ser editado. Esse texto vai parte do template padrão.Texto do documento fixo e não aTexto do documento fixo e não alterável. Esse texto não pode ser editado. Esse texto vai parte do template padrão.lterável. Esse texto não pode ser editado. Esse texto vai parte do template padrão.Texto do documento fixo e não alterável. Esse texto não pode ser editado. Esse texto vai parte do template padrão.<p>
+      <div class="editor">
+        <textarea name="content" id="editor">
+            &lt;p&gt;This is some sample content.&lt;/p&gt;
+        </textarea>  
+      </div>
+      <div class="assinatura">      
+      	<div>Assinatura do camarada</div>
+      	<div><b>Doutor Fulano de tal<b></div>        
+      </div>
+      
+      
+    </div>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+</page>
+
+</body>
+</html>
